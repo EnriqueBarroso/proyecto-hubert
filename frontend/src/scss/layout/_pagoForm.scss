@@ -1,0 +1,129 @@
+@use "../base/variables" as v;
+@use "sass:color";
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.modal-contenido {
+  background-color: v.$beich;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+
+  h3 {
+    color: v.$rojoVino;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: none;
+  font-size: 1.8rem;
+  border: none;
+  cursor: pointer;
+  color: v.$rojoVino;
+}
+
+.form-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  input {
+    padding: 0.6rem 1rem;
+    border: 1px solid v.$rojoVino;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .grupo-mini {
+    display: flex;
+    gap: 1rem;
+
+    .cvv {
+      max-width: 80px;
+    }
+
+    .fecha {
+      max-width: 120px;
+    }
+
+    .cantidad {
+      max-width: 100px;
+    }
+  }
+
+  .tarjeta {
+    display: flex;
+    gap: 0.5rem;
+
+    input {
+      width: 60px;
+      text-align: center;
+    }
+  }
+
+  button {
+    margin-top: 1rem;
+    background-color: v.$rojoVino;
+    color: v.$beich;
+    font-weight: bold;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-color: color.scale(v.$rojoVino, $lightness: -10%);
+    }
+  }
+}
+
+.confirmacion {
+  text-align: center;
+  h4 {
+    font-size: 1.5rem;
+    color: v.$rojoVino;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    color: v.$negro;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

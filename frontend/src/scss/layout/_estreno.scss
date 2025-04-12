@@ -1,0 +1,128 @@
+@use "../base/variables" as v;
+@use "sass:color";
+
+.estreno-section {
+  padding: 10rem 2rem;
+  background-color: v.$rojoVino;
+  color: v.$negro;
+
+  .titulo-obra {
+    font-size: 3.5rem;
+    color: v.$beich;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .estreno-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .obra-imagen img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .obra-info img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+    
+
+    .obra-info {
+      max-width: 500px;
+      
+      .sinopsis {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: v.$beich;
+      }
+
+      .fecha {
+        font-size: 2.5rem;
+        color: azure;
+      }
+
+      .botones {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        button {
+          background-color: v.$beich;
+          color: v.$rojoVino;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: 600;
+          transition: background 0.3s;
+
+          &:hover {
+            background-color: color.adjust(v.$beich, $lightness: -10%);
+          }
+        }
+      }
+    }
+  }
+
+  .actores-estreno {
+    margin-top: 4rem;
+
+    .subtitulo {
+      text-align: center;
+      font-size: 2.2rem;
+      color: v.$rojoVino;
+      margin-bottom: 1.5rem;
+    }
+
+    .elenco-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.5rem;
+
+      .actor-card {
+        background-color: v.$beich;
+        border: 1px solid v.$rojoVino;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+
+        .actor-img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 10px;
+          margin-bottom: 1rem;
+        }
+
+        h4 {
+          color: v.$rojoVino;
+          font-size: 1.3rem;
+          margin: 0.5rem 0;
+        }
+
+        p {
+          color: v.$negro;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

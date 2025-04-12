@@ -1,0 +1,101 @@
+@use "../base/variables" as v;
+@use "sass:color";
+
+  .produccion {
+  padding: 15rem 2rem;
+  background-color: v.$rojoVino;
+  color: v.$beich;
+  text-align: center;
+
+  .produccion-titulo {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .carrusel-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .btn-carrusel {
+    font-size: 2rem;
+    background: none;
+    border: 2px solid v.$beich;
+    color: v.$beich;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: v.$beich;
+      color: v.$rojoVino;
+    }
+  }
+
+  .produccion-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+  }
+
+  .produccion-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .produccion-card {
+    background-color: v.$beich;
+    color: v.$rojoVino;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    .obra-imagen {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .obra-titulo {
+      margin: 0.5rem 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .btn-info {
+      margin-bottom: 1rem;
+      background-color: v.$rojoVino;
+      color: v.$beich;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+
+      &:hover {
+        background-color: color.scale(v.$rojoVino, $lightness: +10%);
+      }
+
+      .arrow {
+        margin-left: 0.3rem;
+      }
+    }
+  }
+}

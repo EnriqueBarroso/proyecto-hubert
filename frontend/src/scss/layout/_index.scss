@@ -1,0 +1,44 @@
+@forward 'navbar';
+@forward 'header';
+@forward 'navbar';
+@forward 'programacion';
+@forward 'nosotros';
+@forward 'repertorio';
+@forward 'produccion';
+@forward 'compraEntradas';
+@use '../base/variables' as v;
+
+
+.secciones-wrapper {
+  display: flex;
+  width: 300vw; // 3 secciones * 100vw
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.seccion {
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+
+  &.left { left: 1rem; }
+  &.right { right: 1rem; }
+}
+

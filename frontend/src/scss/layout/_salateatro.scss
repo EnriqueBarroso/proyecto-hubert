@@ -1,0 +1,129 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+@use 'sass:color';
+
+.sala-section {
+  background-color: v.$rojoVino;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+
+  .sala-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    
+
+    @include m.tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .sala-texto {
+    text-align: left;
+    padding: 0 1rem;
+
+    .sala-pregunta {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: v.$beich;
+
+      @include m.tablet {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: v.$beich;
+
+      @include m.tablet {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .sala-destacado {
+    text-align: right;
+    padding: 0 1rem;
+  
+    .sala-titulo {
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1;
+      color: v.$beich;
+
+      @include m.tablet {
+        font-size: 10rem;
+      }
+
+      @include m.desktopXL {
+        font-size: 15rem;
+      }
+    }
+
+    .sala-galeria {
+      margin-top: 2rem;
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: bold;
+      color: v.$beich;
+      text-decoration: none;
+
+      @include m.tablet {
+        font-size: 1.2rem;
+      }
+
+      .arrow {
+        margin-left: 0.4rem;
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .sala-navegacion {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .btn-scroll {
+      font-size: 2rem;
+      background: transparent;
+      border: none;
+      color: v.$beich;
+      cursor: pointer;
+    }
+
+    .btn-navegar {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.5rem 1rem;
+      font-size: 2rem;
+      color: v.$beich;
+      cursor: pointer;
+
+      &:hover {
+        background-color: white;
+        color: v.$rojoVino;
+      }
+    }
+  }
+}

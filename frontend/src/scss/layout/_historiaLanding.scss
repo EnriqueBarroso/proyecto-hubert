@@ -1,0 +1,112 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+@use "sass:color";
+
+.historia-landing {
+  scroll-behavior: smooth;
+  background-color: v.$beich;
+  position: relative;
+
+  .historia-navbar {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease-in-out;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    @include m.tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+    }
+
+    .historia-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+
+      img {
+        height: 30px;
+        margin-right: 1rem;
+
+        @include m.desktop {
+          height: 50px;
+        }
+      }
+
+      span {
+        font-weight: bold;
+        color: v.$beich;
+        font-size: 1rem;
+
+        @include m.desktop {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .historia-menu {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+
+      @include m.tablet {
+        margin-top: 0;
+      }
+
+      button {
+        background: transparent;
+        border: none;
+        padding: 0.5rem 1rem;
+        color: v.$beich;
+        font-weight: bold;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        @include m.tablet {
+          font-size: 2rem;
+        }
+
+        &:hover {
+          background-color: v.$beich;
+          color: v.$rojoVino;
+        }
+
+        &.active {
+          border-bottom: 2px solid v.$rojoVino;
+          background-color: v.$beich;
+          color: v.$rojoVino;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .btn-volver {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: v.$rojoVino;
+    color: v.$beich;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 20;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+  
+    &:hover {
+      background-color: color.adjust(v.$rojoVino, $lightness: -10%);
+    }
+  }
+}

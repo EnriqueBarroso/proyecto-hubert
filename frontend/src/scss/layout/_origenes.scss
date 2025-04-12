@@ -1,0 +1,87 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.origenes-section {
+  background-color: v.$rojoVino;
+  color: v.$beich;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+
+  .origenes-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+
+    @include m.tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+    }
+  }
+
+  .origenes-texto {
+    text-align: left;
+    padding: 0 1rem;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: v.$beich;
+
+      @include m.tablet {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: v.$beich;
+
+      @include m.tablet {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .origenes-destacado {
+    text-align: left;
+    padding: 0 1rem;
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 0.9;
+      margin-bottom: 1.5rem;
+      color: v.$beich;
+
+      @include m.tablet {
+        font-size: 10rem;
+      }
+      @include m.desktopXL {
+        font-size: 15rem;
+      }
+    }
+
+    a {
+      font-size: 1rem;
+      font-weight: bold;
+      color: v.$beich;
+      text-decoration: none;
+
+      @include m.tablet {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

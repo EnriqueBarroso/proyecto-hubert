@@ -1,0 +1,61 @@
+@use "../base/variables" as v;
+@use "sass:color";
+
+.footer {
+  background-color: v.$rojoVino;
+  color: v.$rojoVino;
+  padding: 2rem 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .footer-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: v.$beich;
+  }
+
+  .footer-info p {
+    margin: 0.3rem 0;
+    color: v.$beich;
+  }
+
+  .footer-social {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+
+    a {
+      font-size: 2.5rem;
+      color: v.$beich;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: color.adjust(v.$beich, $lightness: 15%);
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    color: v.$beich;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1rem;
+    font-size: 0.85rem;
+  }
+}

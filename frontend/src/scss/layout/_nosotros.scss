@@ -1,0 +1,102 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+@use 'sass:color';
+
+
+.nosotros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: v.$rojoVino;
+
+    &-container {
+        max-width: 1400px;
+        width: 100%;
+        position: relative;
+        height: calc(100vh - 40px);
+        min-height: 600px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+
+    &-background {
+        position: absolute;
+        margin: 20px auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/src/img/Nosotros.jpg) center/cover no-repeat;
+        z-index: 1;
+        margin: 20px;
+        box-sizing: border-box;
+    }
+
+    .titulo {
+        align-self: flex-start;
+        z-index: 2;
+        h1 {
+            margin-top: 100px;
+            padding: 10px 20px;
+            font-size: 2rem;
+            color: v.$beich;
+            @include m.tablet {
+                font-size: 3rem;
+            }
+
+            @include m.desktop {
+                font-size: 5rem;
+            }
+        }
+    }
+
+    .enlaces {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        ul {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            @include m.tablet {
+                flex-direction: row;
+                justify-content: center;
+                gap: 10rem;
+            }
+        }
+        li {
+            margin: 0 15px;
+        }
+        a {
+            text-decoration: none;
+            color: v.$beich;
+            font-size: 2rem;
+            font-weight: 800;
+
+            &:hover {
+                color: v.$rojoVino;
+            }
+
+            @include m.tablet {
+                font-size: 2.5rem;
+            }
+
+            @include m.desktop {
+                font-size: 4rem;
+            }
+        }
+      
+    }
+}

@@ -1,0 +1,23 @@
+@use 'variables' as v;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-padding-top: 0rem;
+    height: 100vh;
+    width: 100vw;
+    scroll-behavior: smooth;    
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    font-family: v.$fuente_principal;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 2rem;
+  }

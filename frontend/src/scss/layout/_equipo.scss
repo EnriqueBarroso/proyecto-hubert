@@ -1,0 +1,134 @@
+@use "../base/variables" as v;
+@use "sass:color";
+
+  .equipo {
+  padding: 6rem 2rem;
+  background-color: v.$rojoVino;
+  color: v.$rojoVino;
+  text-align: center;
+
+  &-titulo {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: v.$beich;
+    border: 2px solid v.$beich;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 1400px;
+      height: 2px;
+      background-color: v.$beich;
+      transform: translateY(-50%);
+    }
+  }
+
+  .carrusel-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .btn-carrusel {
+    font-size: 2rem;
+    background: none;
+    border: 2px solid v.$beich;
+    color: v.$beich;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: v.$beich;
+      color: v.$rojoVino;
+    }
+  }
+
+  .elenco-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+  }
+
+  .elenco-card {
+    background-color: v.$beich;
+    color: v.$rojoVino;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    .image-cropper {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        margin: 0 auto 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .actor-imagen {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .actor-nombre {
+      margin: 0.5rem 0;
+      font-weight: bold;
+      font-size: 2rem;
+      color: v.$negro;
+    }
+
+    .social {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .descripcion {
+      color: v.$rojoVino;
+      font-size: 1.2rem;
+    }
+
+    .btn-perfil {
+      margin-bottom: 1rem;
+      background-color: v.$rojoVino;
+      color: v.$beich;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+
+      &:hover {
+        background-color: color.scale(v.$rojoVino, $lightness: +10%);
+      }
+
+      .arrow {
+        margin-left: 0.3rem;
+      }
+    }
+  }
+}

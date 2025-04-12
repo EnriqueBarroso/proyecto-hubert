@@ -1,0 +1,59 @@
+@use '../base/variables' as v;
+
+.actor-carousel-container {
+    margin: 5rem auto;
+    padding: 1rem 1rem;
+    max-width: 1200px;
+    background-color: v.$beich;
+    border-radius: 2rem;
+  
+    .subtitulo {
+      text-align: center;
+      font-size: 2.5rem;
+      color: v.$rojoVino;
+      margin-bottom: 2rem;
+    }
+  
+    .actor-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+  
+      &:hover {
+        transform: scale(1.03);
+      }
+  
+      .actor-img-wrapper {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+  
+      h4 {
+        margin: 0.5rem 0 0.25rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: v.$rojoVino;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: v.$rojoVino;
+        font-style: italic;
+        text-transform: uppercase;
+      }
+    }
+  }
+  

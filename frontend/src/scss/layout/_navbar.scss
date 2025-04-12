@@ -1,0 +1,181 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+// Navbar.scss
+$navbar-max-width: 100%;
+$menu-font-size: 1.5rem;
+
+// Estilos generales
+.navbar-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease-in-out;
+  width: $navbar-max-width;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0.1rem 0.2rem 0.3rem v.$negro;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.navbar {
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  gap: 1rem;
+
+  @include m.tablet {
+    width: 80%;
+    height: 10vh;
+    color: v.$beich;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $navbar-max-width;
+    margin: 0 auto;
+    padding: 15px 20px;
+  }
+
+  // Logo y Título
+  &-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .logo-img {
+      height: 20px;
+      @include m.tablet {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+        margin-right: 1rem;
+      }
+    }
+
+    .logo-title {
+      font-size: 0.9rem;
+      font-weight: 200;
+      color: v.$beich;
+      @include m.tablet {
+        font-size: 1.5rem;
+        text-align: left;
+      }
+    }
+  }
+
+  // Botón hamburguesa
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+
+    .burger-icon {
+      font-size: 2rem;
+      color: v.$beich;
+    }
+
+    @include m.tablet {
+      display: none;
+    }
+  }
+
+  // Menú de navegación
+  &-menu {
+    list-style: none;
+    display: none; // Coloca los elementos en línea
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    gap: 0.2rem;
+    margin-top: 1rem;
+    font-size: small;
+
+    &.open{
+      display: flex;
+    }
+    @include m.tablet {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+      gap: 5rem;
+      width: auto;
+      font-weight: 700;
+      font-size: $menu-font-size;
+    }
+  }
+
+  &-btn {
+    background-color: v.$rojoVino;
+    color: v.$beich;
+    width: 100px;
+    border: none;
+    padding: 0.5rem 0.5rem;
+    font-weight: 300;
+    font-size: small;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: v.$beich;
+      color: v.$rojoVino;
+    }
+    &:focus,
+    &:focus-visible {
+      outline: 4px auto -webkit-focus-ring-color;
+    }
+    @include m.tablet {
+      padding: 1rem 1rem;
+      font-weight: bold;
+      font-size: medium;
+    }
+  }
+}
+
+.menu-item {
+  margin: 0 1rem;
+  position: relative;
+
+  a {
+    color: v.$beich;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 3px;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: v.$rojoVino;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+      color: v.$rojoVino;
+      font-weight: 800;
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use '../base/variables' as v;
+
+.card {
+    background-color: v.$beich;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    }
+  
+    h3 {
+      margin-top: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  
+    p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .redes {
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      
+        a {
+          font-size: 2rem;
+          color: v.$rojoVino;
+          transition: color 0.2s;
+      
+          &:hover {
+            color: #e91e63;
+          }
+        }
+      }
+      
+  }
+  

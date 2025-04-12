@@ -1,0 +1,109 @@
+@use "../base/variables" as v;
+@use "sass:color";
+
+.cartelera {
+  padding: 4rem;
+  background-color: v.$beich;
+
+  &-titulo {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    border: 2px solid v.$rojoVino;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+    color: v.$rojoVino;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 1400px;
+      height: 2px;
+      background-color: v.$rojoVino;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .cartel-card {
+    background: v.$rojoVino;
+    border: 2px solid v.$beich;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      margin: 0.5rem 0;
+      color: v.$beich;
+    }
+
+    .fecha{
+      color: azure;
+      font-style: italic;
+      font-size: 2.5rem;
+    }
+
+    .button-group {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      button {
+        padding: 0.6rem 1rem;
+        font-weight: bold;
+        border: 1px solid v.$beich;
+        border-radius: 8px;
+        background-color: transparent;
+        color: v.$beich;
+        cursor: pointer;
+
+        &:hover {
+          background-color: v.$beich;
+          color: v.$rojoVino;
+        }
+      }
+    }
+  }
+
+  .produccion-link {
+    text-align: center;
+    margin-top: 3rem;
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      background-color: v.$rojoVino;
+      color: v.$beich;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: color.adjust(v.$rojoVino, $lightness: -10%);
+        color: v.$beich;
+      }
+    }
+  }
+}
