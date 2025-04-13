@@ -44,7 +44,7 @@ sequelize.sync({ alter: true })
     console.log("✅ Todas las tablas creadas correctamente");
 
     const PORT = process.env.PORT || 4000;
-    app.listen(PORT, () => console.log(`🚀 Servidor activo en http://localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`🚀 Servidor activo en el puerto ${PORT}`));
   })
     
   .catch((err) => console.error("❌ Error al sincronizar la base de datos:", err));
