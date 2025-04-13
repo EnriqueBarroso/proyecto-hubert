@@ -5,7 +5,7 @@
       },
       "builder": "NIXPACKS",
       "buildCommand": "cd backend && npm install",
-      "startCommand": "cd backend && node app.js"
+      "startCommand": "cd backend && npm start"
     }
   }
   
