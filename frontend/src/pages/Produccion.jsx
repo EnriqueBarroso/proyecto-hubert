@@ -44,7 +44,6 @@ export default function Produccion() {
             <ProduccionCard
               key={obra.id}
               titulo={obra.titulo}
-              sinopsis={obra.sinopsis}
               imgURL={obra.imgURL}
             />
           ))}

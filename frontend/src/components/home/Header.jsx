@@ -13,7 +13,7 @@ function Header() {
         <div className="header-textos">
           <h1 className="texto-izq">
             MÁS DE <span>30 AÑOS</span> <br />DE HISTORIA
-            <br /> Y TRADICCIÓN
+            <br /> Y TRADICIÓN
           </h1>
         </div>
       </div>

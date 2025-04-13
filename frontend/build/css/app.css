@@ -818,13 +818,14 @@ body {
 }
 .repertorio .repertorio-card .obra-titulo {
   margin: 0.5rem 0;
-  font-weight: bold;
+  font-weight: 300;
+  padding: 1.5rem;
   font-size: 2rem;
   color: #d4c38b;
 }
 @media (min-width: 768px) {
   .repertorio .repertorio-card .obra-titulo {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 .repertorio .repertorio-card .sinopsis {
@@ -859,9 +860,34 @@ body {
   color: #d4c38b;
   text-align: center;
 }
-.produccion .produccion-titulo {
-  font-size: 3rem;
+.produccion-titulo {
+  font-size: 2rem;
   margin-bottom: 3rem;
+  border: 2px solid #d4c38b;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+  color: #d4c38b;
+}
+.produccion-titulo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 1400px;
+  height: 2px;
+  background-color: #d4c38b;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .produccion-titulo {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .produccion-titulo {
+    font-size: 3rem;
+  }
 }
 .produccion .carrusel-controles {
   display: flex;
@@ -892,6 +918,22 @@ body {
   margin: 0 auto;
   flex: 1;
 }
+@media (min-width: 768px) {
+  .produccion .produccion-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .produccion .produccion-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1400px) {
+  .produccion .produccion-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(250px, auto);
+  }
+}
 .produccion .produccion-card img {
   width: 100%;
   max-width: 300px;
@@ -920,7 +962,7 @@ body {
 .produccion .produccion-card .obra-titulo {
   margin: 0.5rem 0;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .produccion .produccion-card .btn-info {
   margin-bottom: 1rem;

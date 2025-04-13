@@ -5,20 +5,23 @@
   background-color: v.$beich;
   color: v.$beich;
   padding: 5rem 2rem;
+  text-align: center;
 
   &-titulo {
     font-size: 3rem;
-    text-align: center;
     margin-bottom: 3rem;
-    text-transform: uppercase;
+    border: 2px solid v.$rojoVino;
+    padding: 10px 20px;
+    display: inline-block;
     font-weight: bold;
+    position: relative;
     color: v.$rojoVino;
 
     &::after {
       content: "";
       position: absolute;
       top: 50%;
-      right: 100%;
+      left: 100%;
       width: 1400px;
       height: 2px;
       background-color: v.$rojoVino;

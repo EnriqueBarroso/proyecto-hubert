@@ -1,4 +1,5 @@
 @use "../base/variables" as v;
+@use "../base/mixins" as m;
 @use "sass:color";
 
   .produccion {
@@ -7,9 +8,33 @@
   color: v.$beich;
   text-align: center;
 
-  .produccion-titulo {
-    font-size: 3rem;
+  &-titulo {
+    font-size: 2rem;
     margin-bottom: 3rem;
+    border: 2px solid v.$beich;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+    color: v.$beich;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 1400px;
+      height: 2px;
+      background-color: v.$beich;
+      transform: translateY(-50%);
+    }
+
+    @include m.tablet {
+      font-size: 2.5rem;
+    }
+
+    @include m.desktop {
+      font-size: 3rem;
+    }
   }
 
   .carrusel-controles {
@@ -43,6 +68,20 @@
     max-width: 1200px;
     margin: 0 auto;
     flex: 1;
+
+    @include m.tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    @include m.desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    @include m.desktopXL {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(250px, auto);
+    }
+
   }
 
   .produccion-card img {
@@ -76,7 +115,7 @@
     .obra-titulo {
       margin: 0.5rem 0;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     .btn-info {

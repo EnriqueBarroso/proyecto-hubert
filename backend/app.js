@@ -34,10 +34,14 @@ app.use('/api/funciones', funcionesRoutes);
 app.use('/api/blog', blogRoutes);
 app.use('/api/comentarios-blog', comentariosBlogRoutes);
 
-sequelize.sync({ alter: true }) // o force: true solo si necesitas limpiar
+sequelize.sync({ alter: true }) 
   .then(() => {
     console.log("✅ Todas las tablas creadas correctamente");
+
     const PORT = process.env.PORT || 4000;
     app.listen(PORT, () => console.log(`🚀 Servidor activo en http://localhost:${PORT}`));
   })
+    
   .catch((err) => console.error("❌ Error al sincronizar la base de datos:", err));
+
+  
