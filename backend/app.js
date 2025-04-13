@@ -34,6 +34,11 @@ app.use('/api/funciones', funcionesRoutes);
 app.use('/api/blog', blogRoutes);
 app.use('/api/comentarios-blog', comentariosBlogRoutes);
 
+app.get("/", (req, res) => {
+  res.send("✅ API funcionando desde Railway");
+});
+
+
 sequelize.sync({ alter: true }) 
   .then(() => {
     console.log("✅ Todas las tablas creadas correctamente");
