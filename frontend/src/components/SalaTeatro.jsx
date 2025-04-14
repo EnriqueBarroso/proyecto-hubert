@@ -3,6 +3,7 @@ import "../scss/layout/_salaTeatro.scss";
 import { Link } from "react-router-dom";
 
 export default function SalaTeatro() {
+  
   return (
     <section className="sala-section">
       <div className="sala-contenido">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation,useNavigate } from "react-router-dom";
+import logo from "../../img/logo.png";
 import "../../scss/layout/_navbar.scss";
 
 function Navbar( {hideButton} ) {
@@ -31,7 +32,7 @@ function Navbar( {hideButton} ) {
         <div className="navbar-logo">
           <a oncClick={() => handleScrollOrNavigate("inicio")}>
             <img
-              src="/src/img/logo.png"
+              src={logo}
               alt="logo del sitio"
               className="logo-img"
             ></img>
