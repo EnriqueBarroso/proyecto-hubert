@@ -3,7 +3,7 @@ import "../scss/layout/_repertorio.scss";
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import ModalObra from "../components/ModalObra";
-import RepertorioCard from "../components/card/repertorioCard";
+import RepertorioCard from "../components/card/RepertorioCard";
 import { getObrasRepertorio } from "../api"; 
 
 

@@ -11,12 +11,14 @@
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
-    height: 40vh;
-    min-height: 600px;
-    overflow: hidden;
+    height: auto;
+    padding-top: 4rem;
+    padding-bottom: 64rem;
 
     @include m.tablet {
-      height: 100vh;
+      height: auto;
+      padding-top: 4rem;
+      padding-bottom: 94rem;
     }
   }
 

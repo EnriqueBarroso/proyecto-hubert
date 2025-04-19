@@ -41,7 +41,7 @@ export default function HistoriaLanding() {
       {/* Barra de navegación superior */}
       <div className="historia-navbar">
         <Link to="/" className="historia-logo">
-          <img src="/src/img/logo.png" alt="logo" />
+          <img src="/img/logo.png" alt="logo" />
           <span>HUBERT DE BLANCK</span>
         </Link>
 
