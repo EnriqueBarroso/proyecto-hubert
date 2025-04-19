@@ -59,7 +59,7 @@ export default function Repertorio() {
                 key={index}
                 titulo={obra.titulo}
                 imgURL={obra.imgURL}
-                directorArtistico={obra.direccion_artistica}
+                directorArtistico={obra.directorArtistico}
                 anio={obra.anio}
                 onPerfilClick={() => abrirModal(obra)}
               />

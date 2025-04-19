@@ -11,7 +11,7 @@ const Obra = sequelize.define('Obra', {
   imgURL: DataTypes.STRING,
   tipo: DataTypes.ENUM('cartelera', 'repertorio', 'produccion'),
   anio: DataTypes.INTEGER,
-  direccion_artistica: DataTypes.STRING,
+  directorArtistico: DataTypes.STRING,
 }, {
   timestamps: false
 });
