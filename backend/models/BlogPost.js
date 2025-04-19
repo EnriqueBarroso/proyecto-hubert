@@ -1,12 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 
-const Blog = sequelize.define('Blog', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
+const BlogPost = sequelize.define('BlogPost', {
   titulo: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -21,12 +16,11 @@ const Blog = sequelize.define('Blog', {
     type: DataTypes.STRING,
   },
   fecha: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-  }
+    type: DataTypes.STRING,
+  },
 }, {
   tableName: 'Blogs',
-  timestamps: false
+  timestamps: false,
 });
 
-export default Blog;
+export default BlogPost;

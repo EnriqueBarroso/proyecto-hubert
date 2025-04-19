@@ -10,6 +10,7 @@ import Repertorio from "../pages/Repertorio";
 import Equipo from "../pages/Equipo";
 import Produccion from "../pages/Produccion";
 import CompraEntradas from "../pages/CompraEntradas";
+import BlogDetalle from "../pages/BlogDetalle";
 
 export default function AnimatedRoutes() {
   const location = useLocation();
@@ -24,6 +25,7 @@ export default function AnimatedRoutes() {
         <Route path="/repertorio" element={<Repertorio />} />
         <Route path="/equipo" element={<Equipo />} />
         <Route path="/produccion" element={<Produccion />} />
+        <Route path="/blog/:id" element={<BlogDetalle />} />
       </Routes>
     </AnimatePresence>
   );

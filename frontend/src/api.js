@@ -25,6 +25,7 @@ export const getFuncionesCartelera = () => api.get('/funciones/cartelera');
 // 📰 BLOG
 export const getBlogPosts = () => api.get('/blog');
 export const createBlogPost = (data) => api.post('/blog', data);
+export const getPostById = (id) => api.get(`/blog/${id}`);
 
 // 👥 ACTORES
 export const getActores = () => api.get('/actores');
