@@ -2,6 +2,7 @@ import React from "react";
 import ImagenObra from "../ImagenObra";
 
 export default function RepertorioCard({ titulo, sinopsis, imgURL, anio, directorArtistico, onPerfilClick }) {
+  console.log("🧩 RepertorioCard props:", { titulo, sinopsis, anio, directorArtistico });
   return (
     <div className="repertorio-card">
       <ImagenObra imgURL={imgURL} alt={titulo} />
