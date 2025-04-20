@@ -14,6 +14,9 @@ export default function ActorCarouselEstreno({ elenco = [] }) {
   return (
     <div className="actor-carousel-container">
       <h3 className="subtitulo">ELENCO</h3>
+
+      {/*Carrusel infinito para mostrar los actores*/}
+      
       <Carousel
         showThumbs={false}
         infiniteLoop

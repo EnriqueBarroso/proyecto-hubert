@@ -18,6 +18,7 @@ export default function Estreno() {
   const [funcionSeleccionada, setFuncionSeleccionada] = useState(null);
   const [tipoModal, setTipoModal] = useState("compra");
 
+  // Cargamos la obra segun la selección en cartelera
 
   useEffect(() => {
     const fetchData = async () => {
@@ -93,7 +94,9 @@ export default function Estreno() {
           </div>
         </div>
       </div>
-     
+      
+     {/* Nodal para simulacro de pago*/}
+
      {modalAbierto && funcionSeleccionada && (
              <PagoForm
                funcion={funcionSeleccionada}
@@ -107,6 +110,7 @@ export default function Estreno() {
   
       <ActorCarousel elenco={elenco} />
 
+      {/*Modal creado para mostrar imagenes de la obra */}     
       <GaleriaModal
         isOpen={modalGaleriaAbierto}
         onClose={() => setModalGaleriaAbierto(false)}

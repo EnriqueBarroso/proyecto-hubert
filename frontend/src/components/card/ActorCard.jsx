@@ -1,5 +1,5 @@
 import ImagenActor from './ImagenActor';
-import  '../../scss/layout/_actorCard.module.scss'; // Si usas Sass modules
+import  '../../scss/layout/_actorCard.module.scss'; 
 
 export default function ActorCard({ actor }) {
   return (

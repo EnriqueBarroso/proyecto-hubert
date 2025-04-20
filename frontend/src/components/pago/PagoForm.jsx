@@ -18,6 +18,7 @@ export default function PagoForm({
   const [cvv, setCvv] = useState("");
   const [confirmado, setConfirmado] = useState(false);
 
+  // Si no hay función o el modal está cerrado, no se renderiza nada
   if (!funcion || (modal && !isOpen)) return null;
 
   const handleSubmit = async (e) => {
@@ -86,6 +87,7 @@ export default function PagoForm({
               required
             />
 
+            {/*Solo si es compra mostramos los campos de pago */}
             {tipo === "compra" && (
               <>
                 <input
@@ -123,6 +125,7 @@ export default function PagoForm({
     </>
   );
 
+  // Si viene como modal, lo mostramos con su overlay  
   if (modal) {
     return (
       <div className="modal-overlay" onClick={onClose}>

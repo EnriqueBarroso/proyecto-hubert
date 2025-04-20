@@ -12,6 +12,8 @@ export default function Cartelera() {
   const [funcionSeleccionada, setFuncionSeleccionada] = useState(null);
   const [tipoModal, setTipoModal] = useState("compra");
 
+  //Cargar las obras de la cartelera
+
   useEffect(() => {
     getFuncionesCartelera()
       .then((res) => {
@@ -85,6 +87,8 @@ export default function Cartelera() {
         <p>¿Quieres ver nuestras próximas producciones?</p>
         <button onClick={() => navigate("/produccion")}>Ver Producción</button>
       </div>
+
+         {/* Nodal para simulacro de pago*/}
 
       {modalAbierto && funcionSeleccionada && (
         <PagoForm

@@ -6,7 +6,8 @@ import BlogCard from "../card/BlogCard";
 export default function Blog() {
   const [posts, setPosts] = useState([]);
 
-
+  // Cargar publicaciones del blog al montar el componente
+  
   useEffect(() => {
     getBlogPosts()
       .then((res) => setPosts(res.data))
