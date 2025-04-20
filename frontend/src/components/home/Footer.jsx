@@ -10,10 +10,10 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-info">
           <h3 className="footer-title">Compañía Teatral Hubert de Blanck</h3>
-          <p>📍 Calle 23, La Habana, Cuba</p>
+          <p>📍 Calle Calzada e/ A y B</p>
           <p>📞 +53 7 832 1234</p>
           <p>
-            ✉️ <a>contacto@hubertteatro.cu</a>
+            ✉️ <a>huberteatro@gmail.com</a>
           </p>
         </div>
 
