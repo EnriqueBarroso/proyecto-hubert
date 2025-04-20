@@ -845,14 +845,14 @@ body {
 }
 .repertorio .repertorio-card .anio,
 .repertorio .repertorio-card .direccion {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
   color: #d4c38b;
 }
 .repertorio .repertorio-card .btn-info {
   margin-bottom: 1rem;
-  background-color: #6D0505;
-  color: #d4c38b;
+  background-color: #d4c38b;
+  color: #6D0505;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -860,7 +860,7 @@ body {
   font-weight: bold;
 }
 .repertorio .repertorio-card .btn-info:hover {
-  background-color: rgb(146.8631578947, 6.7368421053, 6.7368421053);
+  background-color: rgb(202.5075471698, 181.7547169811, 113.3924528302);
 }
 .repertorio .repertorio-card .btn-info .arrow {
   margin-left: 0.3rem;

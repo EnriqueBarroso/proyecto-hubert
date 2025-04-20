@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../scss/layout/_blogDetalle.scss";
 import { getPostById } from "../api";
+import { Link } from "react-router-dom";
 
 export default function BlogDetalle() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const [comentarios, setComentarios] = useState([]);
   const [nombre, setNombre] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [loading, setLoading] = useState(true);
@@ -14,13 +16,17 @@ export default function BlogDetalle() {
     getPostById(id)
       .then((res) => {
         setPost(res.data);
-        console.log("📄 Post cargado:", res.data);
-        setLoading(false);;
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Error cargando el post:", err);
         setLoading(false);
-      }); 
+      });
+
+    fetch(`http://localhost:4000/api/comentarios-blog/${id}`)
+      .then((res) => res.json())
+      .then((data) => setComentarios(data))
+      .catch((err) => console.error("Error cargando comentarios:", err));
   }, [id]);
 
   const handleComentario = async (e) => {
@@ -36,11 +42,14 @@ export default function BlogDetalle() {
     });
     setNombre("");
     setMensaje("");
-    alert("Comentario enviado");
+
+    // Recargar comentarios después de enviar
+    const res = await fetch(`http://localhost:4000/api/comentarios-blog/${id}`);
+    const nuevos = await res.json();
+    setComentarios(nuevos);
   };
 
-  if (loading) return <p>Cargando publicación...</p>
-
+  if (loading) return <p>Cargando publicación...</p>;
   if (!post) return <p>No se encontró la publicación</p>;
 
   return (
@@ -68,13 +77,25 @@ export default function BlogDetalle() {
         />
         <button type="submit">Enviar</button>
       </form>
+
+      <hr />
+      <h4>Comentarios</h4>
+      <ul className="comentarios-lista">
+        {comentarios.map((comentario) => (
+          <li key={comentario.id} className="comentario">
+            <strong>{comentario.nombre}</strong>: {comentario.mensaje}
+          </li>
+        ))}
+      </ul>
+      <Link to="/" className="btn-volver">
+        ← Volver al inicio
+      </Link>
     </div>
   );
 }
 
-
 function formatImg(img) {
-    return img?.startsWith("http")
-      ? img
-      : `${import.meta.env.VITE_UPLOADS_URL}/${img}`;
-  }
+  return img?.startsWith("http")
+    ? img
+    : `${import.meta.env.VITE_UPLOADS_URL}/${img}`;
+}

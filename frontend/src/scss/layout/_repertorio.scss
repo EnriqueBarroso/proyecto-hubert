@@ -128,7 +128,7 @@
 
     .anio,
     .direccion {
-      font-size: 1rem;
+      font-size: 1.5rem;
       margin-top: 0.5rem;
       color: v.$beich;
     }
@@ -137,8 +137,8 @@
 
     .btn-info {
       margin-bottom: 1rem;
-      background-color: v.$rojoVino;
-      color: v.$beich;
+      background-color: v.$beich;
+      color: v.$rojoVino;
       border: none;
       padding: 0.5rem 1rem;
       border-radius: 5px;
@@ -146,7 +146,7 @@
       font-weight: bold;
 
       &:hover {
-        background-color: color.scale(v.$rojoVino, $lightness: +10%);
+        background-color: color.scale(v.$beich, $lightness: -10%);
       }
 
       .arrow {
